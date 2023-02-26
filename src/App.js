@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let items = [
+    {"names": "いちご", "price": "100"},
+    {"names": "りんご", "price": "150"},
+    {"names": "バナナ", "price": "230"}
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <table className="table table-striped">
+        <tbody>
+          {items.map((value) => (
+          <tr>
+            <th scope="row">{value.names}</th>
+            <td>{value.price}</td>
+          </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  );
+  )
 }
 
 export default App;
